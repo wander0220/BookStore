@@ -8,56 +8,45 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BookStore</title>
+<title>HOMEPAGE</title>
 <style>
-	body{
-		text-align : center;
-		width: 900px;
+	table{
+	text-align: center;
 	}
-	header, footer, section {
-		margin: 5px;
-		padding: 10px;
-	}
-	header{
-		height: 50px;
-		background-color: red;
-	}
-	section{
-		/*float: left;*/
-		height: 200px;
-		background-color: green;
-	}
-	footer{
-		height: 40px;
-		background-color: gray;
-		position: relatiev;
-		clear: both;		
-	}
-	.include{
-		text-decoration:none;
+	.header{
+		background-color: lime;
 	}
 	.left{
-	background-color: blue;
-		width: 100px;
-		float: left;
+		background-color: blue;
 	}
 	.content{
-	background-color: yellow;
-		width: 800px;
-		float: left;
+	}
+	.footer{
+		background-color: gray;
 	}
 </style>
 </head>
 <body>
-
-<header>
-	<jsp:include page="top.jsp" flush="false"/>
-</header>
-<div class="left"><jsp:include page="left.jsp" flush="false"/></div>
-<div class="content"><jsp:include page="<%=contentPage %>" flush="false"/></div>
-<footer>
-	<jsp:include page="bottom.jsp" flush="false"/>
-</footer>
+<table width="800" cellpadding="2" cellspacint="0">
+<tr class="header">
+	<td colspan="2">
+		<jsp:include page="top.jsp" flush="false"/>
+	</td>
+</tr>
+<tr>
+	<td width="200" valign="top" class="left">
+		<jsp:include page="left.jsp" flush="false"/>
+	</td>
+	<td width="600" valign="top" class="content">
+		<jsp:include page="<%=contentPage %>" flush="false"/>
+	</td>
+</tr>
+<tr class="footer">
+	<td colspan="2">
+		<jsp:include page="bottom.jsp" flush="false"/>
+	</td>
+</tr>
+</table>
 
 </body>
 </html>
